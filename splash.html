@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M.A.G.N.U.S - Splash</title>
+    <link rel="stylesheet" href="css/splash.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="splash-container">
+        <div class="particles" id="particles"></div>
+        <div class="content">
+            <div class="logo">
+                <i class="fas fa-comments"></i>
+            </div>
+            <h1 class="app-name">M.A.G.N.U.S</h1>
+            <p class="tagline">Secure P2P Messaging</p>
+            <div class="loading-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script>
+        // Create particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + 'vw';
+                particle.style.animationDelay = Math.random() * 5 + 's';
+                particle.style.animationDuration = (3 + Math.random() * 4) + 's';
+                container.appendChild(particle);
+            }
+        }
+
+        // Redirect after splash
+        setTimeout(() => {
+            window.location.href = 'login.html';
+        }, 3000);
+
+        createParticles();
+    </script>
+</body>
+</html>
